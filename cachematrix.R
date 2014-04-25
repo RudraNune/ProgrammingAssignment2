@@ -1,10 +1,25 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The Inverse of matrix can be fetched from cache, when its value is calculated for once
 
-## Write a short comment describing this function
+
+#Function makeCacheMatrix creates a list of 4 objecs namely
+#   set
+#   get
+#   setInv
+#   getInv
+
 
 makeCacheMatrix <- function(x = matrix()) {
-
+    m <- NULL
+    set <- function(y) {
+        x <<- y
+        m <<- NULL
+    }
+    get <- function() x
+    setInv <- function(Inv) m <<- Inv
+    getInv <- function() m
+    list(set = set, get = get,
+         setInv = setInv,
+         getInv = getInv)
 }
 
 
